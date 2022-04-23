@@ -14,7 +14,14 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::latest()->get();
+
+        /* return view('productos.index', [
+             'productos' => $productos
+        ]);
+         *///return $productos;
+         return view('productos.index', compact('productos'));
+
     }
 
     /**
@@ -44,9 +51,13 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto)
+    public function show($id)
     {
-        //
+        $producto = Producto::findOrFail($id);
+
+        //return $producto;
+        return view('productos.show', compact('producto'));
+
     }
 
     /**

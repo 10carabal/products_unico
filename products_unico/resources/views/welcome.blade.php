@@ -24,7 +24,7 @@
     </head>
     <body >
         <div id='app'>
-            <example-component></example-component>
+            <h1>Welcome API Productos</h1>
         </div>
     </body>
 </html>
